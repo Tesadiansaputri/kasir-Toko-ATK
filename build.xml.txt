@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Kasir Toko ATK" default="run" basedir=".">
+
+    <!-- direktori sumber dan target -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+
+    <!-- bersihkan folder build -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <!-- compile semua file java -->
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}" destdir="${build.dir}" includeantruntime="false"/>
+    </target>
+
+    <!-- jalankan program -->
+    <target name="run" depends="compile">
+        <java fork="true" classname="form.LoginForm">
+            <classpath>
+                <pathelement path="${build.dir}"/>
+            </classpath>
+        </java>
+    </target>
+
+</project>
