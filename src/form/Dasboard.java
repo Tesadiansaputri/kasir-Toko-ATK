@@ -144,6 +144,11 @@ public class Dasboard extends javax.swing.JFrame {
         );
 
         jButton2.setText("Tambah");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Edit");
         jButton3.setSelected(true);
@@ -343,6 +348,13 @@ public class Dasboard extends javax.swing.JFrame {
         searchUser(keyword);
     }
     }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         tambah_data dialog = new tambah_data(this, true); // 'true' artinya modal
+        dialog.setLocationRelativeTo(this); // Supaya muncul di tengah layar
+        dialog.setVisible(true);
+        loadDataUser();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
